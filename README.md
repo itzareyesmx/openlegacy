@@ -39,7 +39,7 @@ $ npm run webpack:build
 ## :computer: Usage
 
 ```
-$ ./gradle bootRun
+$ ./gradlew bootRun
 ```
 Open [http://localhost:8080/](http://localhost:8080/)
 
