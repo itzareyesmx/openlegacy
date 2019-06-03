@@ -1,53 +1,125 @@
 package com.openlegacy.domain;
 
+
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+/**
+ * A Item.
+ */
 @Entity
-public class Item {
+@Table(name = "item")
+public class Item implements Serializable {
 
-	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-	private long item_no;
+    private static final long serialVersionUID = 1L;
 
-	private String name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	private int amount;
+    @Column(name = "itemno")
+    private Long itemno;
 
-	private String inventory_code;
+    @Column(name = "name")
+    private String name;
 
-	public long getItem_no() {
-		return item_no;
-	}
+    @Column(name = "amount")
+    private Integer amount;
 
-	public void setItem_no(long item_no) {
-		this.item_no = item_no;
-	}
+    @Column(name = "code")
+    private String code;
 
-	public String getName() {
-		return name;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public int getAmount() {
-		return amount;
-	}
+    public Long getItemno() {
+        return itemno;
+    }
 
-	public void setAmount(int amount) {
-		this.amount = amount;
-	}
+    public Item itemno(Long itemno) {
+        this.itemno = itemno;
+        return this;
+    }
 
-	public String getInventory_code() {
-		return inventory_code;
-	}
+    public void setItemno(Long itemno) {
+        this.itemno = itemno;
+    }
 
-	public void setInventory_code(String inventory_code) {
-		this.inventory_code = inventory_code;
-	}
+    public String getName() {
+        return name;
+    }
 
+    public Item name(String name) {
+        this.name = name;
+        return this;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getAmount() {
+        return amount;
+    }
+
+    public Item amount(Integer amount) {
+        this.amount = amount;
+        return this;
+    }
+
+    public void setAmount(Integer amount) {
+        this.amount = amount;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public Item code(String code) {
+        this.code = code;
+        return this;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Item)) {
+            return false;
+        }
+        return id != null && id.equals(((Item) o).id);
+    }
+
+    @Override
+    public int hashCode() {
+        return 31;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+            "id=" + getId() +
+            ", itemno=" + getItemno() +
+            ", name='" + getName() + "'" +
+            ", amount=" + getAmount() +
+            ", code='" + getCode() + "'" +
+            "}";
+    }
 }

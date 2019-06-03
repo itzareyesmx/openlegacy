@@ -46,6 +46,7 @@ export class ItemComponent implements OnInit, OnDestroy {
   }
 
   loadAll() {
+
     this.itemService
       .query({
         page: this.page - 1,
@@ -114,8 +115,8 @@ export class ItemComponent implements OnInit, OnDestroy {
   }
 
   protected paginateItems(data: IItem[], headers: HttpHeaders) {
-    this.links = this.parseLinks.parse(headers.get('link'));
-    this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
+    // this.links = this.parseLinks.parse(headers.get('link'));
+    // this.totalItems = parseInt(headers.get('X-Total-Count'), 10);
     this.items = data;
   }
 

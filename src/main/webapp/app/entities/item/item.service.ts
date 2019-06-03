@@ -13,7 +13,8 @@ type EntityArrayResponseType = HttpResponse<IItem[]>;
 export class ItemService {
   public resourceUrl = SERVER_API_URL + 'api/items';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) {
+  }
 
   create(item: IItem): Observable<EntityResponseType> {
     return this.http.post<IItem>(this.resourceUrl, item, { observe: 'response' });
@@ -29,7 +30,8 @@ export class ItemService {
 
   query(req?: any): Observable<EntityArrayResponseType> {
     const options = createRequestOption(req);
-    return this.http.get<IItem[]>(this.resourceUrl, { params: options, observe: 'response' });
+    console.log(this.http.get<IItem[]>(this.resourceUrl, {observe: 'response' }));
+    return this.http.get<IItem[]>(this.resourceUrl, {observe: 'response' });
   }
 
   delete(id: number): Observable<HttpResponse<any>> {
