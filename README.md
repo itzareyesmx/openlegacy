@@ -44,7 +44,7 @@ $ ./gradlew bootRun
 Open [http://localhost:8080/](http://localhost:8080/)
 
 ## :bookmark_tabs: API
-Open [http://localhost:8080/swagger-ui.htm/](http://localhost:8080/swagger-ui.htm/)
+Open [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## :page_facing_up: License
 This software is licensed under the [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE)
