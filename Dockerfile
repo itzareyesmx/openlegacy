@@ -24,8 +24,9 @@ RUN apt-get update \
 
 RUN npm install
 RUN npm run webpack:build
+RUN npm start
 
 
-EXPOSE 8080
+EXPOSE 9000
 
 CMD ./deploy_app.sh

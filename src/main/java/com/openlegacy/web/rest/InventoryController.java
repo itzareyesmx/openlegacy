@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -31,6 +32,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:9000")
 @Api(value = "Inventory Management System")
 public class InventoryController {
 	

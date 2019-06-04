@@ -43,7 +43,7 @@ Docker image [https://hub.docker.com/r/itzareyesmx/openlegacy](https://hub.docke
 
 ```
 docker pull itzareyesmx/openlegacy
-docker run -p 8080:8080 itzareyesmx/openlegacy:v1
+docker run -p 9000:9000 itzareyesmx/openlegacy:latest
 ```
 
 ## Usage :computer:
