@@ -5,7 +5,6 @@ import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
 
-import org.apache.tomcat.util.http.ResponseUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,7 @@ public class InventoryController {
 	@Autowired
 	private ItemService itemService;
 
-	@ApiOperation(value = "View a list of available items", response = List.class)
+	@ApiOperation(value = "List of inventory items list")
 	@GetMapping("/items")
     public ResponseEntity<List<Item>> getAllItems(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to get a page of Items");
@@ -47,6 +46,7 @@ public class InventoryController {
         return ResponseEntity.ok().body(page.getContent());
     }
 
+	@ApiOperation(value = "Add item to stock")
 	@PostMapping("/items")
 	public ResponseEntity<Item> createItem(@RequestBody Item item) throws URISyntaxException {
 		if (item.getId() != null) {
@@ -56,15 +56,7 @@ public class InventoryController {
 		return ResponseEntity.created(new URI("/api/items/" + result.getId())).body(result);
 	}
 	
-	/**
-     * {@code PUT  /items} : Updates an existing item.
-     *
-     * @param item the item to update.
-     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body the updated item,
-     * or with status {@code 400 (Bad Request)} if the item is not valid,
-     * or with status {@code 500 (Internal Server Error)} if the item couldn't be updated.
-     * @throws URISyntaxException if the Location URI syntax is incorrect.
-     */
+	@ApiOperation(value = "")
     @PutMapping("/items")
     public ResponseEntity<Item> updateItem(@RequestBody Item item) throws URISyntaxException {
         log.debug("REST request to update Item : {}", item);
@@ -74,6 +66,14 @@ public class InventoryController {
         Item result = itemService.save(item);
         return ResponseEntity.ok()
             .body(result);
+    }
+    
+	@ApiOperation(value = "Read item details")
+    @GetMapping("/items/{id}")
+    public ResponseEntity<Item> getItem(@PathVariable Long id) {
+        log.debug("REST request to get Item : {}", id);
+        Optional<Item> item = itemService.findOne(id);
+        return ResponseEntity.ok().body(item.get());
     }
 
 }
