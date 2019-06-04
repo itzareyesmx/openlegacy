@@ -57,7 +57,7 @@ public class InventoryController {
 		return ResponseEntity.created(new URI("/api/items/" + result.getId())).body(result);
 	}
 	
-	@ApiOperation(value = "")
+	@ApiOperation(value = "Update item")
     @PutMapping("/items")
     public ResponseEntity<Item> updateItem(@RequestBody Item item) throws URISyntaxException {
         log.debug("REST request to update Item : {}", item);
@@ -65,8 +65,7 @@ public class InventoryController {
             throw new URISyntaxException("Invalid id", "Item");
         }
         Item result = itemService.save(item);
-        return ResponseEntity.ok()
-            .body(result);
+        return ResponseEntity.ok().body(result);
     }
     
 	@ApiOperation(value = "Read item details")
