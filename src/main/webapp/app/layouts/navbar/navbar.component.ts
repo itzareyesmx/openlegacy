@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 
 import { VERSION } from 'app/app.constants';
-import { ProfileService } from 'app/layouts/profiles/profile.service';
 
 @Component({
   selector: 'jhi-navbar',
@@ -18,16 +17,12 @@ export class NavbarComponent implements OnInit {
   modalRef: NgbModalRef;
   version: string;
 
-  constructor(private profileService: ProfileService, private router: Router) {
+  constructor(private router: Router) {
     this.version = VERSION ? 'v' + VERSION : '';
     this.isNavbarCollapsed = true;
   }
 
   ngOnInit() {
-    this.profileService.getProfileInfo().then(profileInfo => {
-      this.inProduction = profileInfo.inProduction;
-      this.swaggerEnabled = profileInfo.swaggerEnabled;
-    });
   }
 
   collapseNavbar() {

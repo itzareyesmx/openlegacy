@@ -14,7 +14,7 @@ import { InventoryHomeModule } from './home/home.module';
 import { InventoryEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
-import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
+import { JhiMainComponent, NavbarComponent, FooterComponent, ErrorComponent } from './layouts';
 
 @NgModule({
   imports: [
@@ -32,7 +32,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
     InventoryEntityModule,
     InventoryAppRoutingModule
   ],
-  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
+  declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, FooterComponent],
   providers: [],
   bootstrap: [JhiMainComponent]
 })
