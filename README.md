@@ -22,8 +22,8 @@ The following is a job qualification exercise which requires knowledge in the fo
 - Add item to stock
 - Delete an item from stock  
 - [X] Data should be persisted on H2 DB using JPA.
-- [ ] Need to pack and run the application from docker.
-- [ ] Need to send a link to GitHub for source and docker hub for docker image
+- [X] Need to pack and run the application from docker.
+- [X] Need to send a link to GitHub for source and docker hub for docker image
 - [X] Need to return the exercise in a week.
 - [X] Bonus points for creating Angular pages which enable to create/read/update qty/delete item. 
 
@@ -41,6 +41,16 @@ $ npm run webpack:build
 ```
 $ ./gradlew bootRun
 ```
+
+### Docker
+
+Docker image [https://hub.docker.com/r/itzareyesmx/openlegacy](https://hub.docker.com/r/itzareyesmx/openlegacy)
+
+```
+docker pull itzareyesmx/openlegacy
+docker run -p 8080:8080 itzareyesmx/openlegacy:v1
+```
+
 Open [http://localhost:8080/](http://localhost:8080/)
 
 ## :bookmark_tabs: API
