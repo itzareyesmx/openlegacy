@@ -34,6 +34,7 @@ With [npm](https://npmjs.org/) installed, run
 ```
 $ npm install
 $ npm run webpack:build
+$ npm start
 $ ./gradlew bootRun
 ```
 
@@ -48,7 +49,8 @@ docker run -p 9000:9000 itzareyesmx/openlegacy:latest
 
 ## Usage :computer:
 
-Application [http://localhost:8080/](http://localhost:8080/)
+Application [http://localhost:9000/](http://localhost:9000/)
+
 API [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
 ## License :page_facing_up:
