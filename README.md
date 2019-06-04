@@ -11,7 +11,7 @@ The following is a job qualification exercise which requires knowledge in the fo
 - Docker
 - Angular 
 
-## :rocket: Features
+## Features :rocket:
 
 - [X] Need to write a spring-boot application with a REST controller, which expose a Swagger API catalog.
 - [X] The application needs to expose the following APIs:
@@ -27,18 +27,13 @@ The following is a job qualification exercise which requires knowledge in the fo
 - [X] Need to return the exercise in a week.
 - [X] Bonus points for creating Angular pages which enable to create/read/update qty/delete item. 
 
-## :gear: Setup
+## Setup :gear:
 
 With [npm](https://npmjs.org/) installed, run
 
 ```
 $ npm install
 $ npm run webpack:build
-```
-
-## :computer: Usage
-
-```
 $ ./gradlew bootRun
 ```
 
@@ -51,10 +46,11 @@ docker pull itzareyesmx/openlegacy
 docker run -p 8080:8080 itzareyesmx/openlegacy:v1
 ```
 
-Open [http://localhost:8080/](http://localhost:8080/)
+## Usage :computer:
 
-## :bookmark_tabs: API
-Open [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+Application [http://localhost:8080/](http://localhost:8080/)
+API [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
 
-## :page_facing_up: License
+## License :page_facing_up:
+
 This software is licensed under the [MIT](https://github.com/nhn/tui.editor/blob/master/LICENSE)
