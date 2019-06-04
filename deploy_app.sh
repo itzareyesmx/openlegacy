@@ -1,1 +1,1 @@
-./gradlew bootJar && java -jar build/libs/openlegacy-0.0.1-SNAPSHOT.jar
+./gradlew bootRun
