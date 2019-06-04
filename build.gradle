@@ -73,9 +73,9 @@ if (project.hasProperty("nodeInstall")) {
 }
 
 task buildDocker(type: Docker) {
-  baseImage = 'itzareyesmx/openlegacy:tagname'
+  baseImage = 'develar/java:latest'
   push = project.hasProperty('push')
-  tag = 'itzareyesmx/open'
+  tag = 'itzareyesmx/openlegacy'
   addFile {
     from jar
     rename {'app.jar'}
