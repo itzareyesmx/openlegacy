@@ -16,13 +16,13 @@
                     </span>
                 </a>
             </li>
-            <!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+            
             <li ngbDropdown class="nav-item dropdown pointer" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                 <a class="nav-link dropdown-toggle" ngbDropdownToggle href="javascript:void(0);" id="entity-menu">
                     <span>
                         <fa-icon icon="th-list"></fa-icon>
                         <span>
-                            Entities
+                            Inventory
                         </span>
                     </span>
                 </a>
@@ -30,10 +30,9 @@
                     <li>
                         <a class="dropdown-item" routerLink="item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" fixedWidth="true"></fa-icon>
-                            <span>Item</span>
+                            <span>Items</span>
                         </a>
                     </li>
-                    <!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
                 </ul>
             </li>            
         </ul>
