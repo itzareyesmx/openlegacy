@@ -12,6 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -74,6 +75,14 @@ public class InventoryController {
         log.debug("REST request to get Item : {}", id);
         Optional<Item> item = itemService.findOne(id);
         return ResponseEntity.ok().body(item.get());
+    }
+	
+	@ApiOperation(value = "Delete an item from stock")
+	@DeleteMapping("/items/{id}")
+    public ResponseEntity<Void> deleteItem(@PathVariable Long id) {
+        log.debug("REST request to delete Item : {}", id);
+        itemService.delete(id);
+        return ResponseEntity.ok().build();
     }
 
 }
